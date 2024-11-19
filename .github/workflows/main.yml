@@ -2,9 +2,12 @@ name: test
 
 on: workflow_dispatch
 
+env:
+  TEST_VAR: "secretstext"
+
 jobs:
   test-echo:
     runs-on: ubuntu-latest
     steps:
     - name: echo command
-      run: echo "secretstext" > tempfile
+      run: echo $TEST_VAR > tempfile
